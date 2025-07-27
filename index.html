@@ -9,12 +9,13 @@
 </head>
 <body>
   <header>
-    <div class="container">
-      <img src="assets/logo.png" alt="Logo IFMA" class="logo">
+    <div class="container header-container">
+      <img src="img/ifma-logo.png" alt="Logo IFMA" class="logo">
       <nav>
         <ul>
           <li><a href="#home">Início</a></li>
           <li><a href="#pesquisas">Pesquisas</a></li>
+          <li><a href="#projetos">Projetos</a></li>
           <li><a href="#equipe">Equipe</a></li>
           <li><a href="#publicacoes">Publicações</a></li>
           <li><a href="#contato">Contato</a></li>
@@ -33,7 +34,7 @@
 
   <section id="pesquisas" class="section">
     <div class="container">
-      <h2>Áreas de Pesquisa</h2>
+      <h2 class="section-title">Áreas de Pesquisa</h2>
       <div class="grid">
         <div class="card">
           <h3>Alimentos</h3>
@@ -54,36 +55,34 @@
       </div>
     </div>
   </section>
-  <section id="projetos" class="section">
-  <div class="container">
-    <h2>Projetos em Andamento</h2>
-    
-    <div class="projeto">
-      <h3>Monitoramento da Qualidade da Água</h3>
-      <p>Este projeto visa avaliar a qualidade da água em rios de Codó.</p>
-      <button class="btn-toggle">Ver mais</button>
-      <div class="projeto-detalhes">
-        <p>Utilizando técnicas de análise físico-química e microbiológica, os dados obtidos são cruzados com indicadores ambientais e sociais da região. O objetivo é propor soluções para o uso sustentável dos recursos hídricos.</p>
-      </div>
-    </div>
 
-    <div class="projeto">
-      <h3>Uso de Biofertilizantes na Agricultura Familiar</h3>
-      <p>Pesquisa sobre aplicação de biofertilizantes em hortas comunitárias.</p>
-      <button class="btn-toggle">Ver mais</button>
-      <div class="projeto-detalhes">
-        <p>Estudamos a eficácia de compostos orgânicos no aumento da produtividade agrícola, redução de custos e impactos ambientais. A iniciativa envolve oficinas com pequenos produtores locais.</p>
-      </div>
-    </div>
-
-    <!-- Adicione mais projetos aqui -->
-  </div>
-</section>
-
-
-  <section id="equipe" class="section bg-light">
+  <section id="projetos" class="section bg-light">
     <div class="container">
-      <h2>Nossa Equipe</h2>
+      <h2 class="section-title">Projetos em Andamento</h2>
+
+      <div class="projeto">
+        <h3>Monitoramento da Qualidade da Água</h3>
+        <p>Este projeto visa avaliar a qualidade da água em rios de Codó.</p>
+        <button class="btn-toggle">Ver mais</button>
+        <div class="projeto-detalhes">
+          <p>Utilizando técnicas de análise físico-química e microbiológica, os dados obtidos são cruzados com indicadores ambientais e sociais da região. O objetivo é propor soluções para o uso sustentável dos recursos hídricos.</p>
+        </div>
+      </div>
+
+      <div class="projeto">
+        <h3>Uso de Biofertilizantes na Agricultura Familiar</h3>
+        <p>Pesquisa sobre aplicação de biofertilizantes em hortas comunitárias.</p>
+        <button class="btn-toggle">Ver mais</button>
+        <div class="projeto-detalhes">
+          <p>Estudamos a eficácia de compostos orgânicos no aumento da produtividade agrícola, redução de custos e impactos ambientais. A iniciativa envolve oficinas com pequenos produtores locais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipe" class="section">
+    <div class="container">
+      <h2 class="section-title">Nossa Equipe</h2>
       <div class="grid">
         <div class="card">
           <h4>Prof. Dr. Fulano</h4>
@@ -101,9 +100,9 @@
     </div>
   </section>
 
-  <section id="publicacoes" class="section">
+  <section id="publicacoes" class="section bg-light">
     <div class="container">
-      <h2>Publicações</h2>
+      <h2 class="section-title">Publicações</h2>
       <ul class="publicacoes">
         <li><strong>[2024]</strong> Análise de Qualidade da Água no Baixo Itapecuru</li>
         <li><strong>[2023]</strong> Estudo do Solo em Áreas Agrícolas de Codó</li>
@@ -111,14 +110,14 @@
     </div>
   </section>
 
-  <section id="contato" class="section bg-light">
+  <section id="contato" class="section">
     <div class="container">
-      <h2>Fale Conosco</h2>
+      <h2 class="section-title">Fale Conosco</h2>
       <form>
         <input type="text" placeholder="Seu nome" required />
         <input type="email" placeholder="Seu e-mail" required />
         <textarea placeholder="Sua mensagem" rows="4" required></textarea>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn">Enviar</button>
       </form>
       <div class="mapa">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -130,6 +129,16 @@
     <p>&copy; 2025 Grupo AQARH - IFMA Campus Codó</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll(".btn-toggle").forEach(button => {
+      button.addEventListener("click", () => {
+        const detalhes = button.nextElementSibling;
+        const isVisible = detalhes.style.display === "block";
+
+        detalhes.style.display = isVisible ? "none" : "block";
+        button.textContent = isVisible ? "Ver mais" : "Ver menos";
+      });
+    });
+  </script>
 </body>
 </html>

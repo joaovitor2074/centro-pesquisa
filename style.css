@@ -20,10 +20,20 @@ header {
   background: #006633;
   color: white;
   padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .logo {
+  margin: 0 auto;
   height: 50px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 nav ul {
@@ -37,6 +47,11 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffcc00;
 }
 
 .hero {
@@ -45,11 +60,16 @@ nav a {
   color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  flex-direction: column;
 }
 
 .hero h1 {
   font-size: 2.5rem;
+  background: rgba(0,0,0,0.5);
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .btn {
@@ -60,17 +80,47 @@ nav a {
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #00cc66;
 }
 
 .section {
   padding: 3rem 1rem;
 }
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #006633;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #00994d;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
 .projeto {
   margin-bottom: 2rem;
   background: #fff;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .projeto h3 {
@@ -86,6 +136,11 @@ nav a {
   border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background: #00cc66;
 }
 
 .projeto-detalhes {
@@ -98,7 +153,6 @@ nav a {
   from { opacity: 0; transform: scaleY(0.95); }
   to { opacity: 1; transform: scaleY(1); }
 }
-
 
 .bg-light {
   background: #f4f4f4;
@@ -116,6 +170,12 @@ nav a {
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 form {
@@ -128,6 +188,12 @@ form input, form textarea {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  transition: border 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #00994d;
+  outline: none;
 }
 
 form button {
@@ -137,6 +203,11 @@ form button {
   padding: 0.75rem;
   cursor: pointer;
   border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #00cc66;
 }
 
 footer {
@@ -145,4 +216,7 @@ footer {
   background: #006633;
   color: white;
   margin-top: 2rem;
+}
+footer p {
+  margin: 0;
 }
